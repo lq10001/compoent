@@ -1,0 +1,68 @@
+
+<%
+var selected1 = "";
+%>
+<div class="bjui-pageContent">
+  <form method="post" action="${ctxPath}/news/save" class="pageForm" data-toggle="validate">
+
+    <input type="hidden" id="id" name="id" value="${news.id!}">
+    <input type="hidden" id="action" name="action" value="${action!}">
+
+
+    	<div class="pageFormContent" data-layout-h="0">
+
+    		<table class="table table-condensed table-hover" width="100%">
+				<tbody>
+
+
+				<tr>
+					<td>
+						<label for="j_title" class="control-label x85">标题</label>
+						<input type="text" name="title" id="j_title" value="${news.title!}" data-rule="" size="20">
+		            </td>
+		        </tr>
+
+				<tr>
+					<td>
+						<label for="j_userid" class="control-label x85">作者</label>
+						<input type="text" name="userid" id="j_userid" value="${news.userid!}" data-rule="" size="20">
+		            </td>
+		        </tr>
+
+				<tr>
+					<td>
+						<label for="j_adddate" class="control-label x85">添加日期</label>
+
+						<input type="text" name="adddate" id="j_adddate" value="${news.adddate!,'yyyy-MM-dd'}" data-toggle="datepicker" data-rule="date" size="20">
+		            </td>
+		        </tr>
+
+
+				<tr>
+					<td>
+						<label for="j_content" class="control-label x85">内容</label>
+						<input type="text" name="content" id="j_content" value="${news.content!}" data-rule="" size="20">
+		            </td>
+		        </tr>
+
+				<tr>
+					<td>
+						<label for="j_state" class="control-label x85">状态</label>
+						<input type="text" name="state" id="j_state" value="${news.state!}" data-rule="" size="20">
+		            </td>
+		        </tr>
+
+				</tbody>
+			</table>
+		</div>
+
+
+	</form>
+</div>
+
+<div class="bjui-pageFooter">
+	<ul>
+		<li><button type="button" class="btn-close" data-icon="close">取消</button></li>
+		<li><button type="submit" class="btn-default" data-icon="save">保存</button></li>
+	</ul>
+</div>

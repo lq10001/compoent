@@ -1,1 +1,1 @@
-#compoent
+#CMS2.0
