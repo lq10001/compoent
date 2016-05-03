@@ -3,7 +3,7 @@
 	url = https://git.oschina.net/dongfangx/SYS-JAVA-WEBSERVER-NUTZ.git
 [submodule "src/main/java/com/ly/comm"]
 	path = src/main/java/com/ly/comm
-	url = https://git.oschina.net/dongfangx/COMMON-WEBSERVER-NUTZ-JAVA.git
+url=https://git.oschina.net/dongfangx/nutz-common.git
 [submodule "src/main/webapp/WEB-INF/sys"]
 	path = src/main/webapp/WEB-INF/sys
 	url = https://git.oschina.net/dongfangx/SYS-HTML-WEBSERVER-JAVA.git
