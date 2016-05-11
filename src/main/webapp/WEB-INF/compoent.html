@@ -21,74 +21,55 @@
 include("top.html"){}
 %>
 
+<!--search-->
+<div class="detail" style="background-color:#f8f8f8;">
+  <div class="am-g am-container">
+
+    <h2 style="text-align: left;margin-top:20px;">
+      <input type="button" name="" value="返回组件列表" class="am-btn am-btn-warning" onclick="javascript:history.go(-1);">
+    </h2>
+
+  </div>
+</div>
+
+
+
 
 <!--最新产品-->
-<div class="detail" style="background-color:#f8f8f8;padding-top:20px;">
+<div class="detail" style="background-color:#f8f8f8;">
   <div class="am-g am-container">
 
 
-    <h3 class="detail-h3" style="text-align: left;padding-left: 10px;">
-      最新组件
-      <span class="am-fr sm-block" style="line-height: 33px; font-weight:normal; font-size:14px ;">
-        <a href="${ctxPath}/search">更多新组件...</a></span>
-
-    </h3>
+    <h2 class="detail-h2" style="text-align: left;">
+      组件明细
+    </h2>
 
     <ul data-am-widget="gallery" class="am-gallery am-avg-sm-2
   am-avg-md-3 am-avg-lg-4 am-gallery-default" data-am-gallery="{ pureview:false }">
 
-      <%
-      for(product in newProduct_list){
-      %>
+
       <li>
         <div class="am-gallery-item">
-          <a href="${ctxPath}/component?productid=${product.id!}" class="" >
+          <a href="${product.dataurl!}" class="" target="_blank">
             <img src="${ctxPath}/upload/${product.smallimage!}" alt="${product.name!}" style="width: 200px;height: 320px;"/>
+            <a style="margin-top: 20px;" type="button" class="am-btn am-btn-primary" href="${product.dataurl!}" class="" target="_blank">跳转到代码库</a>
             <h3 class="am-gallery-title">${product.name!}</h3>
             <div class="am-gallery-desc">更新日期：${product.editdate!,'yyyy-MM-dd'}</div>
             <div class="am-gallery-desc">作者：${product.author!}</div>
+            <div class="am-gallery-desc">文档：</div>
+            <div class="am-gallery-desc">${product.descript!}</div>
+
           </a>
         </div>
       </li>
-      <%}%>
 
     </ul>
+
+
   </div>
 </div>
 
-<!--最新产品-->
-<div class="detail" style="background-color:#f8f8f8;padding-top: 10px;">
-  <div class="am-g am-container">
 
-
-    <h3 class="detail-h3" style="text-align: left;padding-left: 10px;">
-      热门组件
-      <span class="am-fr sm-block" style="line-height: 33px; font-weight:normal; font-size:14px ;">
-        <a href="${ctxPath}/search">更多热门组件...</a></span>
-
-    </h3>
-
-    <ul data-am-widget="gallery" class="am-gallery am-avg-sm-2
-  am-avg-md-3 am-avg-lg-4 am-gallery-default" data-am-gallery="{ pureview:false }">
-
-      <%
-      for(product in hotProduct_list){
-      %>
-      <li>
-        <div class="am-gallery-item">
-          <a href="${ctxPath}/component?productid=${product.id!}" class="" >
-            <img src="${ctxPath}/upload/${product.smallimage!}" alt="${product.name!}" style="width: 200px;height: 320px;"/>
-            <h3 class="am-gallery-title">${product.name!}</h3>
-            <div class="am-gallery-desc">更新日期：${product.editdate!,'yyyy-MM-dd'}</div>
-            <div class="am-gallery-desc">作者：${product.author!}</div>
-          </a>
-        </div>
-      </li>
-      <%}%>
-
-    </ul>
-  </div>
-</div>
 
 <!--Footer-->
 <%
@@ -109,3 +90,39 @@ include("footer.html"){}
 <!--<![endif]-->
 </body>
 </html>
+
+<script>
+  function onClear()
+  {
+    $("#name").val("");
+    $("#funcnameid").val("");
+    $("#pageCurrent").val(1);
+    $("#searchForm").submit();
+  }
+
+  function onNameSearch()
+  {
+    $("#funcnameid").val("");
+    $("#name").val($("#name2").val());
+
+    $("#pageCurrent").val(1);
+    $("#searchForm").submit();
+  }
+
+  function onFuncSearch()
+  {
+    $("#funcnameid").val("");
+    $("#name").val("");
+
+    $("#pageCurrent").val(1);
+    $("#searchForm").submit();
+  }
+
+
+  function onPage(pageNum)
+  {
+    $("#pageCurrent").val(pageNum);
+    $("#searchForm").submit();
+
+  }
+</script>

@@ -14,14 +14,19 @@
         %>
         <li class="${sel}"><a href="${ctxPath}${obj.url}">${obj.name}</a></li>
         <%}%>
+
+        <li ><a href="#">UI展示</a></li>
+        <li ><a href="#">公司网站</a></li>
+
       </ul>
 
-      <div class="am-topbar-right">
-        <button class="am-btn am-btn-secondary am-topbar-btn am-btn-sm"><span class="am-icon-pencil"></span> 注册</button>
-      </div>
+      <!--<div class="am-topbar-right">-->
+        <!--<button class="am-btn am-btn-secondary am-topbar-btn am-btn-sm"><span class="am-icon-pencil"></span> 注册</button>-->
+      <!--</div>-->
 
       <div class="am-topbar-right">
-        <button class="am-btn am-btn-primary am-topbar-btn am-btn-sm"><span class="am-icon-user"></span> 登录</button>
+        <button class="am-btn am-btn-primary am-topbar-btn am-btn-sm" onclick="window.location.href='${ctxPath}/admin'">
+          <span class="am-icon-user"></span> 登录</button>
       </div>
     </div>
   </div>
