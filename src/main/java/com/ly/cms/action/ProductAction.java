@@ -1,5 +1,7 @@
 package com.ly.cms.action;
 
+import com.aliyun.oss.OSSClient;
+import com.ly.Global;
 import com.ly.cms.service.FuncnameService;
 import com.ly.cms.service.PlatformService;
 import com.ly.comm.Bjui;
@@ -106,21 +108,25 @@ public class ProductAction {
         String webPath =  request.getServletContext().getRealPath("/");
         String appPath = webPath + "upload/";
 
+
         if (f1 != null)
         {
-            if (product.getSmallimage() != null)
+            OSSClient ossClient = new OSSClient(Global.public_endpoint, Global.accessKeyId, Global.accessKeySecret);
+
+            if (product.getFirstkey().trim().length() > 2)
             {
-                String oldFileName = product.getSmallimage().trim();
-                if (oldFileName.length() > 2)
-                {
-                    Files.deleteFile(new File(appPath + oldFileName));
-                }
+                ossClient.deleteObject(Global.bucketName, product.getFirstkey());
             }
 
             String fileName = System.currentTimeMillis()+f1.getName();
-            Files.copyFile(f1, new File(appPath + fileName));
-            product.setSmallimage(fileName);
+
+            ossClient.putObject(Global.bucketName, fileName, f1);
+            product.setFirstkey(fileName);
+            product.setSmallimage("http://"+ Global.bucketName+"." + Global.public_endpoint + "/" + fileName);
+            ossClient.shutdown();
+
         }
+        /*
         if (f2 != null)
         {
             if (product.getMaximage() != null) {
@@ -134,6 +140,7 @@ public class ProductAction {
             Files.copyFile(f2, new File(appPath + fileName2));
             product.setMaximage(fileName2);
         }
+        */
 
         Date date = new Date();
         if (product.getId() == null || product.getId() == 0) {

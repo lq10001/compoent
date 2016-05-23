@@ -7,5 +7,14 @@ public class Global {
 
     public static String PROJECT_NAME = "cms";
 
+    public static String public_endpoint = "oss-cn-qingdao.aliyuncs.com";
+
+    public static String private_endpoint = "oss-cn-qingdao-internal.aliyuncs.com";
+
+    public static String accessKeyId = "ZYEIhzBFgSZKc6sh";
+
+    public static String accessKeySecret = "JJIOYJI2AZmUrgKiuiguUC4j1CBYkL";
+
+    public static String bucketName = "component";
 
 }

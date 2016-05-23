@@ -35,6 +35,9 @@ public class Product{
 	private Date editdate;
 
 	@Column
+	private String firstkey;
+
+	@Column
 	private String smallimage;
 
 	@Column
@@ -109,6 +112,14 @@ public class Product{
 
 	public void setEditdate(Date editdate) {
 		this.editdate = editdate;
+	}
+
+	public String getFirstkey() {
+		return firstkey;
+	}
+
+	public void setFirstkey(String firstkey) {
+		this.firstkey = firstkey;
 	}
 
 	public String getSmallimage() {

@@ -92,7 +92,7 @@ include("top.html"){}
       <li>
         <div class="am-gallery-item">
           <a href="${ctxPath}/component?productid=${product.id!}" class="" >
-            <img src="${ctxPath}/upload/${product.smallimage!}" alt="${product.name!}" style="width: 200px;height: 320px;"/>
+            <img src="${product.smallimage!}" alt="${product.name!}" style="width: 200px;height: 320px;"/>
             <h3 class="am-gallery-title">${product.name!}</h3>
             <div class="am-gallery-desc">更新日期：${product.editdate!,'yyyy-MM-dd'}</div>
             <div class="am-gallery-desc">作者：${product.author!}</div>
