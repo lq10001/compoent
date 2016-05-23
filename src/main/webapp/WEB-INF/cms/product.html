@@ -23,6 +23,27 @@ var selected1 = "";
 		            </td>
 		        </tr>
 
+				<tr>
+					<td>
+						<label for="j_platformid" class="control-label x85">平台类型</label>
+						<select id="j_platformid" name="platformid" data-toggle="selectpicker" data-width="200">
+							<%
+							selected1 = "";
+							for(obj in platformList!)
+							{
+							if(isEmpty(product.platformid) || obj.id != product.platformid)
+							{
+							selected1="";
+							}else{
+							selected1 = "selected='selected'";
+							}
+							println("<option value='" + obj.id + "'"+selected1+">"+obj.name+"</option>");
+							}
+							%>
+						</select>
+					</td>
+				</tr>
+
 
 				<tr>
 					<td>

@@ -20,6 +20,9 @@ public class Product{
 	private Long funcnameid;
 
 	@Column
+	private Long platformid;
+
+	@Column
 	private String dataurl;
 
 	@Column
@@ -66,6 +69,14 @@ public class Product{
 
 	public void setFuncnameid(Long funcnameid) {
 		this.funcnameid = funcnameid;
+	}
+
+	public Long getPlatformid() {
+		return platformid;
+	}
+
+	public void setPlatformid(Long platformid) {
+		this.platformid = platformid;
 	}
 
 	public String getDataurl() {

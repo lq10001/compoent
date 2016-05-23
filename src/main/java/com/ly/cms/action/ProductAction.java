@@ -1,6 +1,7 @@
 package com.ly.cms.action;
 
 import com.ly.cms.service.FuncnameService;
+import com.ly.cms.service.PlatformService;
 import com.ly.comm.Bjui;
 import com.ly.comm.Page;
 import com.ly.comm.ParseObj;
@@ -43,6 +44,9 @@ public class ProductAction {
     @Inject
     private FuncnameService funcnameService;
 
+    @Inject
+    private PlatformService platformService;
+
     @At("/")
     @Ok("beetl:/WEB-INF/cms/product_list.html")
     public void index(@Param("..")Page p,
@@ -62,6 +66,8 @@ public class ProductAction {
         request.setAttribute("page", p);
         request.setAttribute("product", product);
         request.setAttribute("funcnameList",funcnameService.queryCache(null,new Page()));
+        request.setAttribute("platformList",platformService.queryCache(null,new Page()));
+
 
     }
 
@@ -83,6 +89,7 @@ public class ProductAction {
         }
         request.setAttribute("action", action);
         request.setAttribute("funcnameList",funcnameService.queryCache(null,new Page()));
+        request.setAttribute("platformList",platformService.queryCache(null,new Page()));
     }
 
     @At

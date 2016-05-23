@@ -49,6 +49,8 @@ var selected1 = "";
 
 			<th>名称</th>
 
+			<th>所属平台</th>
+
 			<th>所属功能名</th>
 
 			<th>组件小图</th>
@@ -79,6 +81,20 @@ var selected1 = "";
 
 			<td>
 				 ${obj.name!}
+			</td>
+
+			<td>
+
+				<%
+				for(obj2 in platformList)
+				{
+				if(obj2.id == obj.platformid)
+				{
+				print(obj2.name);
+				break;
+				}
+				}
+				%>
 			</td>
 
 			<td>
