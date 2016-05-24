@@ -5,6 +5,7 @@ import com.ly.Global;
 import com.ly.cms.service.FuncnameService;
 import com.ly.cms.service.PlatformService;
 import com.ly.comm.Bjui;
+import com.ly.comm.OSSSingleton;
 import com.ly.comm.Page;
 import com.ly.comm.ParseObj;
 import org.nutz.dao.Cnd;
@@ -108,22 +109,19 @@ public class ProductAction {
         String webPath =  request.getServletContext().getRealPath("/");
         String appPath = webPath + "upload/";
 
-
         if (f1 != null)
         {
-            OSSClient ossClient = new OSSClient(Global.public_endpoint, Global.accessKeyId, Global.accessKeySecret);
-
-            if (product.getFirstkey().trim().length() > 2)
+            if (product.getFirstkey() != null && product.getFirstkey().trim().length() > 2)
             {
-                ossClient.deleteObject(Global.bucketName, product.getFirstkey());
+                OSSSingleton.getInstance().delFile(product.getFirstkey());
             }
 
             String fileName = System.currentTimeMillis()+f1.getName();
 
-            ossClient.putObject(Global.bucketName, fileName, f1);
+            OSSSingleton.getInstance().addFile(fileName,f1);
+
             product.setFirstkey(fileName);
             product.setSmallimage("http://"+ Global.bucketName+"." + Global.public_endpoint + "/" + fileName);
-            ossClient.shutdown();
 
         }
         /*
