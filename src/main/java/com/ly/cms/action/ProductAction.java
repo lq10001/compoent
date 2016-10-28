@@ -106,9 +106,6 @@ public class ProductAction {
      )throws IOException {
         Object rtnObject;
 
-        String webPath =  request.getServletContext().getRealPath("/");
-        String appPath = webPath + "upload/";
-
         if (f1 != null)
         {
             if (product.getFirstkey() != null && product.getFirstkey().trim().length() > 2)
@@ -122,23 +119,7 @@ public class ProductAction {
 
             product.setFirstkey(fileName);
             product.setSmallimage("http://"+ Global.bucketName+"." + Global.public_endpoint + "/" + fileName);
-
         }
-        /*
-        if (f2 != null)
-        {
-            if (product.getMaximage() != null) {
-                String oldImgName = product.getMaximage().trim();
-                if (oldImgName.length() > 2) {
-                    Files.deleteFile(new File(appPath + oldImgName));
-                }
-            }
-
-            String fileName2 = System.currentTimeMillis()+f2.getName();
-            Files.copyFile(f2, new File(appPath + fileName2));
-            product.setMaximage(fileName2);
-        }
-        */
 
         Date date = new Date();
         if (product.getId() == null || product.getId() == 0) {

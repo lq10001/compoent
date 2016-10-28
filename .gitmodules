@@ -4,15 +4,9 @@
 [submodule "src/main/java/com/ly/comm"]
 	path = src/main/java/com/ly/comm
 url=https://git.oschina.net/dongfangx/nutz-common.git
-[submodule "src/main/webapp/WEB-INF/sys"]
-	path = src/main/webapp/WEB-INF/sys
-	url = https://git.oschina.net/dongfangx/SYS-HTML-WEBSERVER-JAVA.git
 [submodule "src/main/webapp/sys"]
 	path = src/main/webapp/sys
 	url = https://git.oschina.net/dongfangx/SYS-RESOURCES-WEBSERVER-NUTZ-JAVA.git
 [submodule "src/main/webapp/AmazeUI"]
 	path = src/main/webapp/AmazeUI
 	url = https://git.oschina.net/dongfangx/AmazeUI.git
-[submodule "src/main/webapp/BJUI"]
-	path = src/main/webapp/BJUI
-	url = https://git.oschina.net/dongfangx/BJUI.git
