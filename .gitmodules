@@ -1,12 +1,3 @@
-[submodule "src/main/java/com/ly/sys"]
-	path = src/main/java/com/ly/sys
-	url = https://git.oschina.net/dongfangx/SYS-JAVA-WEBSERVER-NUTZ.git
-[submodule "src/main/java/com/ly/comm"]
-	path = src/main/java/com/ly/comm
-url=https://git.oschina.net/dongfangx/nutz-common.git
-[submodule "src/main/webapp/sys"]
-	path = src/main/webapp/sys
-	url = https://git.oschina.net/dongfangx/SYS-RESOURCES-WEBSERVER-NUTZ-JAVA.git
 [submodule "src/main/webapp/AmazeUI"]
 	path = src/main/webapp/AmazeUI
 	url = https://git.oschina.net/dongfangx/AmazeUI.git
