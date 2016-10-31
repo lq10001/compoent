@@ -9,8 +9,8 @@
   <meta name="format-detection" content="telephone=no">
   <meta name="renderer" content="webkit">
   <meta http-equiv="Cache-Control" content="no-siteapp"/>
-  <link rel="alternate icon" type="image/png" href="${ctxPath}/AmazeUI/i/favicon.png">
-  <link rel="stylesheet" href="${ctxPath}/AmazeUI/css/amazeui.min.css"/>
+  <link rel="alternate icon" type="image/png" href="/AmazeUI/i/favicon.png">
+  <link rel="stylesheet" href="/AmazeUI/css/amazeui.min.css"/>
 
 </head>
 <body>
@@ -30,7 +30,7 @@ include("top.html"){}
     <h3 class="detail-h3" style="text-align: left;padding-left: 10px;">
       最新组件
       <span class="am-fr sm-block" style="line-height: 33px; font-weight:normal; font-size:14px ;">
-        <a href="${ctxPath}/search">更多新组件...</a></span>
+        <a href="/search">更多新组件...</a></span>
 
     </h3>
 
@@ -42,7 +42,7 @@ include("top.html"){}
       %>
       <li>
         <div class="am-gallery-item">
-          <a href="${ctxPath}/component?productid=${product.id!}" class="" >
+          <a href="/component?productid=${product.id!}" class="" >
             <img src="${product.smallimage!}" alt="${product.name!}" style="width: 200px;height: 320px;"/>
             <h3 class="am-gallery-title">${product.name!}</h3>
             <div class="am-gallery-desc">更新日期：${product.editdate!,'yyyy-MM-dd'}</div>
@@ -64,7 +64,7 @@ include("top.html"){}
     <h3 class="detail-h3" style="text-align: left;padding-left: 10px;">
       热门组件
       <span class="am-fr sm-block" style="line-height: 33px; font-weight:normal; font-size:14px ;">
-        <a href="${ctxPath}/search">更多热门组件...</a></span>
+        <a href="/search">更多热门组件...</a></span>
 
     </h3>
 
@@ -76,7 +76,7 @@ include("top.html"){}
       %>
       <li>
         <div class="am-gallery-item">
-          <a href="${ctxPath}/component?productid=${product.id!}" class="" >
+          <a href="/component?productid=${product.id!}" class="" >
             <img src="${product.smallimage!}" alt="${product.name!}" style="width: 200px;height: 320px;"/>
             <h3 class="am-gallery-title">${product.name!}</h3>
             <div class="am-gallery-desc">更新日期：${product.editdate!,'yyyy-MM-dd'}</div>
@@ -98,14 +98,14 @@ include("footer.html"){}
 <!--[if lt IE 9]>
 <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
-<script src="${ctxPath}/AmazeUI/js/polyfill/rem.min.js"></script>
-<script src="${ctxPath}/AmazeUI/js/polyfill/respond.min.js"></script>
-<script src="${ctxPath}/AmazeUI/js/amazeui.legacy.js"></script>
+<script src="/AmazeUI/js/polyfill/rem.min.js"></script>
+<script src="/AmazeUI/js/polyfill/respond.min.js"></script>
+<script src="/AmazeUI/js/amazeui.legacy.js"></script>
 <![endif]-->
 
 <!--[if (gte IE 9)|!(IE)]><!-->
-<script src="${ctxPath}/AmazeUI/js/jquery.min.js"></script>
-<script src="${ctxPath}/AmazeUI/js/amazeui.min.js"></script>
+<script src="/AmazeUI/js/jquery.min.js"></script>
+<script src="/AmazeUI/js/amazeui.min.js"></script>
 <!--<![endif]-->
 </body>
 </html>
