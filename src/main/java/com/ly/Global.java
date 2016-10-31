@@ -7,6 +7,9 @@ public class Global {
 
     public static String PROJECT_NAME = "cms";
 
+    public static String LOGIN_USER = "login_user";
+
+
     public static String public_endpoint = "oss-cn-qingdao.aliyuncs.com";
 
     public static String private_endpoint = "oss-cn-qingdao-internal.aliyuncs.com";
